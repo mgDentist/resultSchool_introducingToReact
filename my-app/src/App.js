@@ -1,13 +1,22 @@
-import logo from "./logo.svg";
-import "./App.css";
+import logo from './logo.svg';
+import './App.css';
 
-function App() {
+// функция ниже это императивный стиль (я описываю как делать)
+function showYear() {
+	const currentDate = new Date();
+	const year = currentDate.getFullYear();
+	return year;
+}
+
+// функция ниже это декларативный стиль (я не описываю процесс создания элементов,
+// я говорю это сделать)
+export const App = () => {
 	return (
 		<div className="App">
 			<header className="App-header">
 				<img src={logo} className="App-logo" alt="logo" />
 				<p>
-					Edit <code>src/App.js</code> and save to reload. Anya
+					Edit <code>src/App.js</code> and save to reload.
 				</p>
 				<a
 					className="App-link"
@@ -17,9 +26,8 @@ function App() {
 				>
 					Learn React
 				</a>
+				<p>{showYear()}</p>
 			</header>
 		</div>
 	);
-}
-
-export default App;
+};
